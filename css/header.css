@@ -1,0 +1,114 @@
+  /* 🌍 FIXED + CLEAN HEADER */
+.site-header {
+  background: rgba(40, 39, 39, 0.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+/* Perfect Header Layout */
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 1.2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+  height: 70px;
+}
+
+/* Brand (Logo + Title) */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+/* FINAL FIX FOR HUGE IMAGE */
+ .logo {
+  width: 60px;            /* adjust size as you like */
+  height: 60px;           /* must match width for perfect circle */
+  border-radius: 50%;     /* makes it circular */
+  object-fit: cover;      /* fits image inside circle */
+  background: #f4f2f2;       /* optional clean white background */
+  padding: 5px;           /* optional spacing around logo */
+  box-shadow: 0 0 6px rgba(0,0,0,0.15);  /* optional soft shadow */
+}
+
+
+/* Navigation (if added in future) */
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: var(--muted);
+  font-weight: 500;
+  padding: 0.38rem 0.65rem;
+  border-radius: 6px;
+  transition: 0.2s;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+  color: var(--primary);
+  background: rgba(37, 99, 235, 0.1);
+}
+
+/* Action Buttons */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.icon-btn {
+  background: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 8px;
+  padding: 0.35rem 0.55rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.icon-btn:hover {
+  background: var(--primary);
+  color: #fff;
+  transform: rotate(10deg);
+}
+
+/* Mobile Layout */
+@media (max-width: 768px) {
+  .header-inner {
+    flex-direction: column;
+    gap: 0.6rem;
+    height: auto;
+    padding: 0.8rem 1rem;
+  }
+
+  .main-nav {
+    margin-top: 0.5rem;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+}
+
+/* Dark Mode */
+body.dark .site-header {
+  background: rgba(38, 46, 67, 0.85);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.dark .icon-btn {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #eee;
+}

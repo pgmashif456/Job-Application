@@ -1,0 +1,119 @@
+/* ==========================
+   PAGE LAYOUT FIX
+/* ========================== */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  /* 🌄 Your Background Image */
+  background: url("https://lh3.googleusercontent.com/gg-dl/ABS2GSl_yTT88jxhX_9lEpbNxu9U6m2KblRVer2o7BoVGkwnSdo0B9UNHep7CVEWTO4gLG5F2E8oh9g_1aPrB86vOZnRZd9t0rs0I2uotindQluRyobN6e9zPvIvB4aN5e1OrySed4CKZMeaq1EHCRA5M7HpHSGarQy-qslMbcXoB6FyOjsB=s1024-rj")
+              no-repeat center center / cover;
+
+  font-family: "Poppins", sans-serif;
+  color: #333;
+}
+
+/* Ensure header stays at top */
+.site-header, 
+#header {
+  flex-shrink: 0;
+}
+
+/* Center thank-you card perfectly */
+main.thankyou {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ==========================
+   THANK YOU CARD
+========================== */
+.thankyou-card {
+  background: #fff;
+  padding: 60px 50px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  max-width: 480px;
+  width: 100%;
+  animation: fadeIn 0.6s ease-in-out;
+  text-align: center;
+}
+
+.thankyou-card h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 15px;
+}
+
+.thankyou-card p {
+  color: #555;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+/* Button styling */
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #2563eb;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #1d4ed8;
+}
+
+/* Muted text */
+.muted {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+/* ==========================
+   FOOTER
+========================== */
+#footer,
+.site-footer {
+  text-align: center;
+  padding: 20px 0;
+  background: #fff;
+  border-top: 1px solid #ddd;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+#footer a,
+.site-footer a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+#footer a:hover,
+.site-footer a:hover {
+  text-decoration: underline;
+}
+
+/* ==========================
+   ANIMATIONS
+========================== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

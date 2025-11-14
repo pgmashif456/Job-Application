@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apply – Jobify Careers</title>
+
+  <meta name="description" content="Apply for jobs at Taskify with our online application form.">
+
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/form.css">
+  <link rel="stylesheet" href="../css/thankyou.css">
+  <link rel="stylesheet" href="../css/header.css">
+</head>
+<body>
+
+  <div id="header"></div>
+
+  <main class="form-container">
+    <h2>Job Application</h2>
+    <div class="progress-bar"><div id="progress"></div></div>
+
+    <form id="jobForm">
+      <!-- Step 1 -->
+      <div class="form-step active">
+        <h3>Step 1: Personal Info</h3>
+        <input type="text" name="name" placeholder="Full Name" required>
+        <input type="email" name="email" placeholder="Email Address" required>
+        <input type="tel" name="phone" placeholder="Phone Number" required>
+        <button type="button" class="next">Next</button>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="form-step">
+        <h3>Step 2: Experience</h3>
+        <input type="number" name="experience" placeholder="Years of Experience" required min="0">
+        <input type="text" name="skills" placeholder="Key Skills (comma separated)" required>
+
+        <div class="leadership hidden">
+          <label>Leadership Roles</label>
+          <input type="text" name="leadership" placeholder="Describe leadership roles">
+        </div>
+
+        <button type="button" class="prev">Back</button>
+        <button type="button" class="next">Next</button>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="form-step">
+        <h3>Step 3: Upload Resume</h3>
+        <input type="file" name="resume" accept=".pdf,.doc,.docx" required>
+        <p class="note">Accepted formats: PDF, DOC, DOCX (Max 2MB)</p>
+
+        <button type="button" class="prev">Back</button>
+        <button type="button" class="next">Next</button>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="form-step">
+        <h3>Step 4: Review & Submit</h3>
+        <div id="review"></div>
+
+        <button type="button" class="prev">Back</button>
+        <button type="submit" class="btn btn--primary">Submit</button>
+      </div>
+    </form>
+  </main>
+
+  <div id="footer"></div>
+
+  <script src="../js/loader.js"></script>
+  <script type="module" src="../js/form.js"></script>
+
+</body>
+</html>

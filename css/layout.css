@@ -1,0 +1,117 @@
+/* =============== Full-page background (reliable) =============== */
+/* make sure html & body fill viewport */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Layout base */
+body {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+  color: #333;
+  background: none;
+  box-sizing: border-box;
+}
+
+/* 🌄 Full Background Image */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+
+  background-image: url("https://t4.ftcdn.net/jpg/09/02/53/81/360_F_902538150_JCEcejSQkRHHR7d5jE1nbmfhXHdcd9E3.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  filter: brightness(0.82);   /* best contrast for white form box */
+}
+
+/* 🌫 Soft Light Overlay */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+
+  background: rgba(255, 255, 255, 0.50);  /* lighter overlay for clarity */
+  backdrop-filter: blur(1px);
+}
+
+/* Ensure header & footer appear on top */
+.site-header,
+#header,
+.site-footer,
+#footer {
+  position: relative;
+  z-index: 5;
+}
+
+/* Thank-you page layout */
+main.thankyou {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 2;
+}
+
+/* 🟦 Thank You Card */
+.thankyou-card {
+  background: rgba(255, 255, 255, 0.96);
+  padding: 60px 50px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  max-width: 480px;
+  width: 100%;
+  animation: fadeIn 0.6s ease-in-out;
+  text-align: center;
+}
+
+.thankyou-card h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 15px;
+}
+.thankyou-card p {
+  color: #555;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background: #2563eb;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+.btn:hover {
+  background: #1d4ed8;
+}
+
+.muted {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+/* Fade animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

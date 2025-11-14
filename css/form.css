@@ -1,0 +1,38 @@
+body { display: flex; flex-direction: column; min-height:100vh; }
+
+.form-container {
+  max-width: 600px;
+  background-color: var(--background);
+  margin: 3rem auto;
+   
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 6px 25px rgba(145, 17, 17, 0.08);
+}
+@media (max-width: 600px) {
+  .form-container { margin:1rem; padding:1.5rem; }
+}
+/* Always keep form heading black */
+.form-container h2,
+.form-step h3 {
+  color: #000 !important;
+}
+/* Fix Job Application heading size and spacing */
+.form-container h2 {
+  font-size: 1.6rem;        /* smaller heading */
+  font-weight: 600;
+  margin-top: 0.4rem;       /* reduce top gap */
+  margin-bottom: 0.8rem;    /* reduce space below heading */
+  text-align: center;
+}
+
+/* Reduce space between progress bar and Step title */
+.progress-bar {
+  margin: 0.4rem 0 1.2rem;  /* reduce top + bottom spacing */
+}
+
+/* Reduce spacing before Step 1: Personal Info */
+.form-step h3 {
+  margin-top: 0.2rem !important;
+  margin-bottom: 1rem;
+}
